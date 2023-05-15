@@ -20,7 +20,7 @@ it('displays the given name', () => {
 it('displays Hello if given a name', () => {
   render(<Greeting name="Fabian" />)
 
-  expect(screen.getByText('Hello', {exact: false})).toBeVisible()
+  expect(screen.getByText(/hello/i)).toBeVisible()
 })
 
 it('renders according to snapshot', () => {
