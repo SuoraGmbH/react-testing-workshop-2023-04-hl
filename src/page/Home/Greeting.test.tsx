@@ -5,36 +5,42 @@ it("renders without crashing", () => {
   render(<Greeting />);
 });
 
-it('displays some greeting', () => {
-  render(<Greeting />)
+it("displays some greeting", () => {
+  render(<Greeting />);
 
-  expect(screen.getByText('hello', {exact: false})).toBeVisible()
-})
+  expect(screen.getByText("hello", { exact: false })).toBeVisible();
+});
 
-it('displays the given name', () => {
-  render(<Greeting name="Fabian" />)
+it("displays the given name", () => {
+  render(<Greeting name="Fabian" />);
 
-  expect(screen.getByText('Fabian', {exact: false})).toBeVisible()
-})
+  expect(screen.getByText("Fabian", { exact: false })).toBeVisible();
+});
 
-it('displays Hello if given a name', () => {
-  render(<Greeting name="Fabian" />)
+it("displays Hello if given a name", () => {
+  render(<Greeting name="Fabian" />);
 
-  expect(screen.getByText(/hello/i)).toBeVisible()
-})
+  expect(screen.getByText(/hello/i)).toBeVisible();
+});
 
-it('renders according to snapshot', () => {
-  const {container} = render(<Greeting name="Fabian" />)
+test("regexp stuff", () => {
+  const name = "Fabian";
+  render(<Greeting name={name} />);
 
-  expect(container).toMatchSnapshot()
-})
+  expect(screen.getByText(new RegExp(`Hello.*${name}`, "i"))).toBeVisible();
+});
 
-it('renders according to snapshot for unknown users', () => {
-  const {container} = render(<Greeting />)
+it("renders according to snapshot", () => {
+  const { container } = render(<Greeting name="Fabian" />);
 
-  expect(container).toMatchSnapshot()
-})
+  expect(container).toMatchSnapshot();
+});
 
+it("renders according to snapshot for unknown users", () => {
+  const { container } = render(<Greeting />);
+
+  expect(container).toMatchSnapshot();
+});
 
 //
 // it("greets strangers nicely", () => {
