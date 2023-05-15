@@ -9,7 +9,7 @@ const Greeting: React.FunctionComponent<Props> = ({ name }) => {
     return <div>Hello, stranger!</div>;
   }
 
-  return <div>Hallo, dear {name}!</div>;
+  return <div>Hello, dear {name}!</div>;
 };
 
 export default Greeting;

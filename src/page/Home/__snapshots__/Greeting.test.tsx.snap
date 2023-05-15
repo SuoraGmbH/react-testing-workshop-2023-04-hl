@@ -3,7 +3,7 @@
 exports[`renders according to snapshot 1`] = `
 <div>
   <div>
-    Hallo, dear 
+    Hello, dear 
     Fabian
     !
   </div>
