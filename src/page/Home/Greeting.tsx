@@ -5,9 +5,10 @@ interface Props {
 }
 
 const Greeting: React.FunctionComponent<Props> = ({ name }) => {
-  if (!name) {
+  if (!name || name.trim() === '') {
     return <div>Hello stranger!</div>;
   }
+
   return <div>Hello, dear {name}!</div>;
 };
 
