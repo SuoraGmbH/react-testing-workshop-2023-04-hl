@@ -6,6 +6,7 @@ import { jsonServerProjectsSuccessMock } from "../mocks/json-server/projects/suc
 import { jsonServerProjectsErrorMock } from "../mocks/json-server/projects/error";
 
 beforeEach(() => {
+  // Look at this line
   server.resetHandlers(jsonServerProjectsSuccessMock);
 });
 
